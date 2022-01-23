@@ -28,7 +28,7 @@ public static LineResponse of(final Line line) {
 
 ## A
 
-> [Kakao. Mobility junwoochoi]()
+> [Kakao. Mobility junwoochoi](https://github.com/junwoochoi)
 
 위에 질문 주신 내용에 대한 답변 여기 달겠습니다!
 
