@@ -48,3 +48,4 @@ public static LineResponse of(final Line line) {
 
 - 정답은 없다.
 - __나는 파라미터에만 final 을 사용하고 메서드 내부에서는 Effective final 을 사용하는 방식으로 사용해야 겠다.__
+        - 단, 메서드 내부에서도 진짜 불변을 강조해야하는 곳에서는 final 을 사용하자.
