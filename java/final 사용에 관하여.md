@@ -47,5 +47,6 @@ public static LineResponse of(final Line line) {
 ## 나만의 스타일
 
 - 정답은 없다.
-- __나는 파라미터에만 final 을 사용하고 메서드 내부에서는 Effective final 을 사용하는 방식으로 사용해야 겠다.__
-        - 단, 메서드 내부에서도 진짜 불변을 강조해야하는 곳에서는 final 을 사용하자.
+- __메서드의 시그니처에서 파라미터가 불변인 경우 final 명시__
+- __메서드 내부에서는 Effective final 을 사용하도록 변경__
+   - 메서드 내부에서 꼭 불변을 보장해야하는 변수들에 대해서만 final 사용
