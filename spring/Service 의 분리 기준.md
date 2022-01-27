@@ -1,6 +1,8 @@
-# Service 의 분리 기준
+# SectionService 는 분리하는게 맞는가?
 
-### Q. SectionService 는 분리하는게 맞는가?
+> @ Reviewer : 카카오 모빌리티 최준우
+
+### Q
 
 구간을 만들때, REST API를 설계하는 것은 어렵지 않았습니다. 구간은 노선이 등록되고 나서야 등록 가능하기 때문에, `노선/노선ID/구간/구간ID` 형식으로 URI 를 표현하는게 맞다고 생각이 들었습니다.
 
@@ -23,7 +25,7 @@ Line Entity 와 Section Entity 의 관게를 보면, Line Entity 에서 Section 
 
 이에 대한 리뷰어님 생각은 어떠신지 궁금합니다.
 
-### A. 답변
+### A
 
 저 같은 경우는 유스케이스를 기준으로 분리를 하게되는 편입니다. 현재는 간단한 미션이지만 실무를 진행하면서 요구사항이 복잡해질수록 처음에는 UserService로 시작했다가, UserQueryService, UserSignUpService, UserUpdateService 등과 같이 나누어 지게 되더라구요............
 정호님은 사용하셨을 때 어떤 방향이 가장 좋은 것 처럼 느껴지셨는지도 궁금하네요 👀
