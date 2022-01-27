@@ -1,6 +1,8 @@
 # SectionService 는 분리하는게 맞는가?
 
 > @ Reviewer : 카카오 모빌리티 최준우
+> 
+> > @ Reviewer : 류성현(브라운)
 
 ### Q
 
@@ -65,3 +67,23 @@ public class LineQueryService {
 - LineQueryService 에 벌써 많은 의존성이 생기고, 실제로 이렇게 되면 __필드 부분(어떤 의존성을 주입 받고 있는지)을 보더라도 라인과 구간의 관계를 명확하게 파악하기 힘들다고 보여집니다.__
 
 > 라인과 구간의 관계는 REST API 설계와 엔티티간의 관계를 통해서 파악하는게 훨씬 빨라지게 된다고 생각합니다.
+
+### A
+
+- 정답은 없다
+- Service 를 분리하게 되면 역할과 책임이 조금 더 구체적이라는게 장점이고, Section 은 Line 에 종속적이기 때문에 Line 안에 넣으면, 구간을 생성할때 코드가 조금 더 표현력이 좋아지는 것 같다.
+
+```java
+lineService.addSection();
+
+public SectionResponse addSection(final SectionRequest request, final Long id) {
+    Line line = getLineById(id);
+    Station upStation = findStationById(request.getUpStationId());
+    Station downStation = findStationById(request.getDownStationId());
+
+    Sections sections = line.getSections();
+    Section newSection = Section.of(line, upStation, downStation, request);
+    sections.add(newSection);
+    return SectionResponse.of(newSection);
+}
+```
