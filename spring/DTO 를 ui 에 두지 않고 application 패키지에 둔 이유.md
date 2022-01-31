@@ -6,3 +6,4 @@
 - DTO 객체가 ui 에 있으면 Service 가 Controller 에 의존하게됨
   - 즉, 의존 관계의 방향이 역으로 흘러가게 된다.
 - __DTO 가 application 패키지에 있으면 Presentation Layer 는 Application Layer 에 원래 의존 관계를 갖고 있기 때문에 의존 관계를 한 방향을 보게끔 설계__
+- __비지니스 로직을 최대한 도메인으로 모을 수록 의존 관계의 방향이 최대한 한 방향으로 모아져서 테스트를 구현하기가 쉬워진다.__
